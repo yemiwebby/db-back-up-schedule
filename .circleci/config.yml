@@ -31,7 +31,7 @@ jobs:
       - run:
           name: Run database back up
           command: npm run backup
-       run: ls
+      - run: ls
 
 parameters:
   run-schedule:
