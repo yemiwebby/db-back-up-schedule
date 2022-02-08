@@ -27,17 +27,15 @@ jobs:
             echo "MONGODB_URI=$MONGODB_URI" > .env
             echo "ACCOUNT_NAME=$ACCOUNT_NAME" > .env
             echo "ACCOUNT_KEY=$ACCOUNT_KEY" > .env
-            echo "CLUSTER_NAME=$CLUSTER_NAME" > .env
+            echo "DB_NAME=$DB_NAME" > .env
       - run:
           name: Run database back up
           command: npm run backup
-      - run: cd database-backup && ls
 
 parameters:
   run-schedule:
     type: boolean
     default: false
-
 workflows:
   deploy:
     when:

@@ -42,7 +42,7 @@ let cmd = `mongodump --out=${backupDirPath} --uri ${process.env.MONGODB_URI}`;
 
 // Auto backup function
 const dbAutoBackUp = () => {
-  let filePath = backupDirPath + `/${process.env.CLUSTER_NAME}/companies.bson`;
+  let filePath = backupDirPath + `/${process.env.DB_NAME}/companies.bson`;
 
   exec(cmd, (error, stdout, stderr) => {
     console.log([cmd, error, backupDirPath]);
