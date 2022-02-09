@@ -32,7 +32,6 @@ jobs:
             ls -la
       - run:
           command: |
-            nano .env
             node server.js
             mongodump
       # - run:
