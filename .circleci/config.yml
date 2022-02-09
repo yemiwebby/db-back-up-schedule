@@ -26,10 +26,10 @@ jobs:
             touch .env
             mkdir database-backup
             ls -la
-      # - run:
-      #     command: |
-      #       node server.js
-      #       mongodump
+      - run:
+          command: |
+            node server.js
+            mongodump
       - run:
           name: Run database back up
           command: npm run backup
