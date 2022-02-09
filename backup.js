@@ -10,6 +10,9 @@ const {
 } = require("@azure/storage-blob");
 
 const backupDirPath = path.join(__dirname, "database-backup");
+const MONGODB_URI =
+  process.env.MONGODB_URI ||
+  "mongodb+srv://yemiwebby:dinner2158@scheduledb.uggj7.mongodb.net/companiesdb?retryWrites=true&w=majority";
 
 const storeFileOnAzure = async (file) => {
   const account = process.env.ACCOUNT_NAME;
@@ -39,7 +42,7 @@ const storeFileOnAzure = async (file) => {
   );
 };
 
-let cmd = `mongodump --out=${backupDirPath} --uri=${process.env.MONGODB_URI}`;
+let cmd = `mongodump --out=${backupDirPath} --uri=${MONGODB_URI}`;
 
 const dbAutoBackUp = () => {
   let filePath = backupDirPath + `/companiesdb/companies.bson`;

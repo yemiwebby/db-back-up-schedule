@@ -8,7 +8,9 @@ const app = express();
 
 app.use(express.json());
 
-const uri = process.env.MONGODB_URI;
+const uri =
+  process.env.MONGODB_URI ||
+  "mongodb+srv://yemiwebby:dinner2158@scheduledb.uggj7.mongodb.net/companiesdb?retryWrites=true&w=majority";
 mongoose.connect(uri, {});
 
 const db = mongoose.connection;
