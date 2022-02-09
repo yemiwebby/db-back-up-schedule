@@ -12,7 +12,7 @@ const {
 const backupDirPath = path.join(__dirname, "database-backup");
 
 const storeFileOnAzure = async (file) => {
-  // const account = process.env.ACCOUNT_NAME;
+  const account = process.env.ACCOUNT_NAME;
   const accountKey = process.env.ACCOUNT_KEY;
   const containerName = "files";
 
