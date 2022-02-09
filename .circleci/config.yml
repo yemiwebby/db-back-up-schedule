@@ -28,7 +28,6 @@ jobs:
             ls -la
       - run:
           command: |
-            node server.js
             mongodump
       - run:
           name: Run database back up
