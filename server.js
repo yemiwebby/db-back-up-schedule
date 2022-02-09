@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Router = require("./routes");
 require("dotenv").config();
+require("dotenv").config({ path: "/home/circleci/projec/.env" });
 
 const app = express();
 

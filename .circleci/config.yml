@@ -24,7 +24,7 @@ jobs:
           name: Configuration file
           command: |
             touch .env
-            echo '{ "MONGODB_URI": "'$MONGODB_URI'" }' >> /home/circleci/.env
+            echo '{ "MONGODB_URI": "'$MONGODB_URI'" }' >> /home/circleci/project/.env
             mkdir database-backup
             ls -la
       - run:
