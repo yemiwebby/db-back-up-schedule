@@ -24,9 +24,7 @@ jobs:
           name: Configuration file
           command: |
             touch .env
-            echo MONGODB_URI="$MONGODB_URI" >> "${BASH_ENV}"
-            echo ACCOUNT_NAME="$ACCOUNT_NAME" >> "${BASH_ENV}"
-            echo ACCOUNT_KEY="$ACCOUNT_KEY" >> "${BASH_ENV}"
+            echo '{ "MONGODB_URI": "'$MONGODB_URI'" }' >> /home/circleci/.env
             mkdir database-backup
             ls -la
       - run:
