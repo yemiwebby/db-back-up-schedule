@@ -29,7 +29,8 @@ jobs:
             ls -la
       - run:
           command: |
-            mongodump
+            mongodump --version
+            ls -la
       - run:
           name: Run database back up
           command: npm run backup
