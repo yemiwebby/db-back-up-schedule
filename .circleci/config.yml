@@ -31,9 +31,9 @@ jobs:
           command: |
             node server.js
             mongodump
-      # - run:
-      #     name: Run database back up
-      #     command: npm run backup
+      - run:
+          name: Run database back up
+          command: npm run backup
 
 parameters:
   run-schedule:
