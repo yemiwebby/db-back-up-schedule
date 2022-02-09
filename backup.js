@@ -46,7 +46,7 @@ const dbAutoBackUp = () => {
 
   exec(cmd, (error, stdout, stderr) => {
     console.log([cmd, error, backupDirPath]);
-    // storeFileOnAzure(filePath);
+    storeFileOnAzure(filePath);
   });
 };
 
