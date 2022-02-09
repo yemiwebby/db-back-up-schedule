@@ -12,7 +12,7 @@ const {
 const backupDirPath = path.join(__dirname, "database-backup");
 
 const storeFileOnAzure = async (file) => {
-  const account = process.env.ACCOUNT_NAME;
+  // const account = process.env.ACCOUNT_NAME;
   const accountKey = process.env.ACCOUNT_KEY;
   const containerName = "files";
 
@@ -39,7 +39,7 @@ const storeFileOnAzure = async (file) => {
   );
 };
 
-let cmd = `mongodump --out=${backupDirPath} --uri ${process.env.MONGODB_URI}`;
+let cmd = `mongodump --out=${backupDirPath} --uri=${process.env.MONGODB_URI}`;
 
 const dbAutoBackUp = () => {
   let filePath = backupDirPath + `/companiesdb/companies.bson`;
