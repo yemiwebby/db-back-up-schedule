@@ -27,9 +27,10 @@ jobs:
             echo "MONGODB_URI=$MONGODB_URI" > .env
             echo "ACCOUNT_NAME=$ACCOUNT_NAME" > .env
             echo "ACCOUNT_KEY=$ACCOUNT_KEY" > .env
-      - run:
-          name: Run database back up
-          command: npm run backup
+      - run: ls -la
+      # - run:
+      #     name: Run database back up
+      #     command: npm run backup
 
 parameters:
   run-schedule:
@@ -41,6 +42,7 @@ workflows:
       not: << pipeline.parameters.run-schedule >>
     jobs:
       - build
+      - schedule_backup
   backup:
     when: << pipeline.parameters.run-schedule >>
     jobs:
