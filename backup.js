@@ -42,11 +42,11 @@ const storeFileOnAzure = async (file) => {
 let cmd = `mongodump --out=${backupDirPath} --uri ${process.env.MONGODB_URI}`;
 
 const dbAutoBackUp = () => {
-  // let filePath = backupDirPath + `/companiesdb/companies.bson`;
+  let filePath = backupDirPath + `/companiesdb/companies.bson`;
 
   exec(cmd, (error, stdout, stderr) => {
     console.log([cmd, error, backupDirPath]);
-    storeFileOnAzure(backupDirPath);
+    storeFileOnAzure(filePath);
   });
 };
 
