@@ -28,7 +28,6 @@ jobs:
             echo "ACCOUNT_NAME=$ACCOUNT_NAME" > .env
             echo "ACCOUNT_KEY=$ACCOUNT_KEY" > .env
             mkdir database-backup
-            npm run backup
             cd database-backup
             ls -la
       - run:
