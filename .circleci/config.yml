@@ -24,7 +24,7 @@ jobs:
           name: Configuration file
           command: |
             touch .env
-            echo 'export MONGODB_URI="$MONGODB_URI"' >> $BASH_ENV
+            echo 'MONGODB_URI="$MONGODB_URI"' >> $BASH_ENV
             mkdir database-backup
             ls -la
       - run:
