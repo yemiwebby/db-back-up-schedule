@@ -24,13 +24,14 @@ jobs:
           name: Configuration file
           command: |
             touch .env
+            echo ${CIRCLE_BRANCH}
             echo 'MONGODB_URI=${MONGODB_URI}' >> $BASH_ENV
             mkdir database-backup
             ls -la
-      - run:
-          command: |
-            node server.js
-            mongodump
+      # - run:
+      #     command: |
+      #       node server.js
+      #       mongodump
       - run:
           name: Run database back up
           command: npm run backup
