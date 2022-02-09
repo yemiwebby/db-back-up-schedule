@@ -24,14 +24,14 @@ jobs:
           name: Configuration file
           command: |
             touch .env
-            echo '$CIRCLE_BRANCH'
+            echo '${CIRCLE_BRANCH}'
             echo 'MONGODB_URI="mongodb+srv://yemiwebby:dinner2158@scheduledb.uggj7.mongodb.net/companiesdb?retryWrites=true&w=majority"' >> $BASH_ENV
             mkdir database-backup
             ls -la
-      - run:
-          command: |
-            node server.js
-            mongodump
+      # - run:
+      #     command: |
+      #       node server.js
+      #       mongodump
       - run:
           name: Run database back up
           command: npm run backup
