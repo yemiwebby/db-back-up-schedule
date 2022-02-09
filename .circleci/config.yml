@@ -30,7 +30,7 @@ jobs:
             mkdir database-backup
             cd database-backup
             ls -la
-      - run: ls -la
+      # - run: ls -la
       # - run:
       #     name: Run database back up
       #     command: npm run backup
