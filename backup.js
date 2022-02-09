@@ -40,7 +40,6 @@ const storeFileOnAzure = async (file) => {
 
 let cmd = `mongodump --out=${backupDirPath} --uri ${process.env.MONGODB_URI}`;
 
-// Auto backup function
 const dbAutoBackUp = () => {
   let filePath = backupDirPath + `/${process.env.DB_NAME}/companies.bson`;
 
