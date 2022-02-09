@@ -29,9 +29,9 @@ jobs:
             echo "ACCOUNT_KEY=$ACCOUNT_KEY" > .env
             mkdir database-backup
       - run: ls -la
-      # - run:
-      #     name: Run database back up
-      #     command: npm run backup
+      - run:
+          name: Run database back up
+          command: npm run backup
 
 parameters:
   run-schedule:
