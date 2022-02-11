@@ -10,6 +10,7 @@ jobs:
       - heroku/deploy-via-git:
           force: true
   schedule_backup:
+    working_directory: ~/project
     docker:
       - image: cimg/node:17.4.0
     steps:
@@ -20,22 +21,13 @@ jobs:
             npm install
             sudo apt-get update
             sudo apt-get install -y mongodb
-            echo 'MONGODB_URI="mongodb+srv://yemiwebby:dinner2158@scheduledb.uggj7.mongodb.net/companiesdb?retryWrites=true&w=majority"' >> $BASH_ENV
-            mongodump
-      - run:
-          name: Configuration file
-          command: |
-            touch .env
-            echo 'MONGODB_URI="mongodb+srv://yemiwebby:dinner2158@scheduledb.uggj7.mongodb.net/companiesdb?retryWrites=true&w=majority"' >> $BASH_ENV
-            mkdir database-backup
-            ls -la
-      - run:
-          command: |
-            mongodump --version
-            ls -la
       - run:
           name: Run database back up
           command: npm run backup
+      - run:
+          name: Configuration file
+          command: |
+            ls -la
 
 parameters:
   run-schedule:
