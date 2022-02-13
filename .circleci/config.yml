@@ -21,7 +21,7 @@ jobs:
             npm install
             sudo apt-get update
             sudo apt-get install -y mongodb
-            mongodump --out="/home/circleci/project/database-backup" --uri="mongodb+srv://yemiwebby:dinner2158@scheduledb.uggj7.mongodb.net/companiesdb"
+            mongodump --out="/home/circleci/project/database-backup" --uri="mongodb+srv://yemiwebby:dinner2158@scheduledb.uggj7.mongodb.net/companiesdb" --forceTableScan
       - run:
           name: Run database back up
           command: npm run backup
