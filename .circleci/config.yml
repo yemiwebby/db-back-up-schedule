@@ -26,7 +26,7 @@ jobs:
           name: Run database back up
           command: npm run backup
       - run:
-          name: Configuration file
+          name: Configuration file for the project
           command: |
             ls -la
 
