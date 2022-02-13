@@ -10,7 +10,6 @@ const {
 } = require("@azure/storage-blob");
 
 const backupDirPath = path.join(__dirname, "database-backup");
-const MONGODB_URI = process.env.MONGODB_URI;
 
 const storeFileOnAzure = async (file) => {
   const account = process.env.ACCOUNT_NAME;
