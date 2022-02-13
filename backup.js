@@ -22,7 +22,7 @@ const storeFileOnAzure = async (file) => {
     accountKey
   );
 
-  // instantiate Blob Client
+  // instantiate Client
   const blobServiceClient = new BlobServiceClient(
     `https://${account}.blob.core.windows.net`,
     sharedKeyCredential
