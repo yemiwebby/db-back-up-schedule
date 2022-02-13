@@ -6,6 +6,7 @@ jobs:
     executor: heroku/default
     steps:
       - checkout
+      - ls -la
       - heroku/install
       - heroku/deploy-via-git:
           force: true
@@ -21,7 +22,6 @@ jobs:
             npm install
             sudo apt-get update
             sudo apt-get install -y mongodb
-            mongodump --out="/home/circleci/project/database-backup" --uri=$MONGODB_URI --forceTableScan
       - run:
           name: Run database back up
           command: npm run backup
@@ -41,7 +41,6 @@ workflows:
       not: << pipeline.parameters.run-schedule >>
     jobs:
       - build
-      - schedule_backup
   backup:
     when: << pipeline.parameters.run-schedule >>
     jobs:
