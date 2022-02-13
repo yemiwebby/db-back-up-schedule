@@ -6,7 +6,7 @@ jobs:
     executor: heroku/default
     steps:
       - checkout
-      - ls -la
+      - run: ls -la
       - heroku/install
       - heroku/deploy-via-git:
           force: true
