@@ -16,7 +16,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install MongoDB Tools
+          name: Install MongoDB Tools.
           command: |
             npm install
             sudo apt-get update
