@@ -24,11 +24,6 @@ jobs:
       - run:
           name: Run database back up
           command: npm run backup
-      - run:
-          name: Configuration file for the project.
-          command: |
-            cd database-backup
-            ls -la
 
 parameters:
   run-schedule:
