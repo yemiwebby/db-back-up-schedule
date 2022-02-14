@@ -35,7 +35,6 @@ workflows:
       not: << pipeline.parameters.run-schedule >>
     jobs:
       - build
-      - schedule_backup
   backup:
     when: << pipeline.parameters.run-schedule >>
     jobs:
