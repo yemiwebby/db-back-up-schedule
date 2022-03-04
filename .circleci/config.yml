@@ -8,7 +8,9 @@ jobs:
       - checkout
       - heroku/install
       - run:
-          command: heroku --version
+          command: |
+            heroku --version
+            heroku login
       - heroku/deploy-via-git:
           force: true
   schedule_backup:
