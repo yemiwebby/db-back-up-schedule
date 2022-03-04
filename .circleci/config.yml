@@ -7,6 +7,8 @@ jobs:
     steps:
       - checkout
       - heroku/install
+      - run:
+          command: heroku --version
       - heroku/deploy-via-git:
           force: true
   schedule_backup:
@@ -35,7 +37,7 @@ workflows:
       not: << pipeline.parameters.run-schedule >>
     jobs:
       - build
-  backup:
-    when: << pipeline.parameters.run-schedule >>
-    jobs:
-      - schedule_backup
+  # backup:
+  #   when: << pipeline.parameters.run-schedule >>
+  #   jobs:
+  #     - schedule_backup
